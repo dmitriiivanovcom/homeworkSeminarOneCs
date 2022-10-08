@@ -1,53 +1,80 @@
-﻿// first
-/*Console.WriteLine("Please, give me three-digit number.");
-int num = Convert.ToInt32(Console.ReadLine());
-if(num >=100 && num < 1000)
-    {
-    int ld = ((num % 100) / 10);
-    Console.WriteLine($"last digit of {num} is {ld}");
-    }
-else
-    Console.WriteLine("Uncorrect input!");
-*/
-
-// second example.
-    //third from the end
-/*Console.WriteLine("Give me integer number.");
-int num = Convert.ToInt32(Console.ReadLine());
-if(num >=100)
-    {
-    int tn = (num / 100 % 10);
-    Console.WriteLine($"Third digit of {num} is {tn}");
-    }
-else
-    Console.WriteLine("Uncorrect input!");
-*/
-
-    //third from the beginning
-/*Console.WriteLine("Give me integer number.");
-int num = Convert.ToInt32(Console.ReadLine());
-int temp = num;
-if(num > 1000)
-    do
-        temp = temp / 10;
-    while(temp > 1000);
-if(temp < 1000 && num >= 100)
-    {
-    temp = temp % 10;
-    Console.WriteLine($"Third digit if {num} is {temp}");
-    }
-else
-    Console.WriteLine("Its too small.");
-*/
-
-// third example
+﻿// exercise one
 /*
-Console.WriteLine("give me the day of the week number.");
-int day = Convert.ToInt32(Console.ReadLine());
-if(day > 0 && day < 6)
-    Console.WriteLine($"{day} is a weekday");
-if(day > 5 && day < 8)
-    Console.WriteLine($"{day} is outlet");
-if(day < 1 || day > 7)
-    Console.WriteLine("Wrong number!");
+int RightSide(int num)
+{
+    int x1 = num % 10 * 10;
+    int x2 = num % 100 / 10;
+    int x3 = x1 + x2;
+    return x3;
+}
+int LeftSide(int num)
+{
+    int y = num / 1000;
+    return y;
+}
+Console.WriteLine("Give me a five-digit number.");
+int num = Convert.ToInt32(Console.ReadLine());
+int left = LeftSide(num);
+int right = RightSide(num);
+if(num < 100000 && num >= 10000)
+{
+    if(left == right) Console.WriteLine("Its Palindrome!");
+    if(left != right) Console.WriteLine("It isn't Palindrome!");
+}
+else
+Console.WriteLine("Please, try again.");
+*/
+
+
+// exercise two
+/*
+double Distance(double x1, double x2, double y1, double y2, double z1, double z2)
+{
+    double a = ((x2-x1)*(x2-x1));
+    double b = ((y2-y1)*(y2-y1));
+    double c = ((z2-z1)*(z2-z1));
+    double d = Math.Sqrt(a+b+c);
+    double result = Math.Round(d,3);
+    return result;
+}
+
+Console.WriteLine("Hey, guy. wana know some distance? give me x1.");
+double x1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Now give me y1.");
+double y1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Last coordinate for first point. Give me z1.");
+double z1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Give me x2, guy.");
+double x2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Give me y2");
+double y2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Its the last one, give me z2");
+double z2 = Convert.ToDouble(Console.ReadLine());
+
+double dis = Distance(x1, x2, y1, y2, z1, z2);
+Console.WriteLine($"Your distance is {dis}, do not thank, guy!");
+*/
+
+//exercise three
+/*
+Console.WriteLine("How many cubes you want?");
+int num = Convert.ToInt32(Console.ReadLine());
+int temp = 1;
+int place = 0;
+int[] cubes = new int[num];
+do
+{
+    cubes[place] = temp*temp*temp;
+    temp++;
+    place++;
+}
+while(place < num);
+place = 0;
+Console.WriteLine("Your cubes: ");
+do
+{
+    Console.Write($" {cubes[place]}");
+    place++;
+}
+while(place < num);
 */
