@@ -87,7 +87,7 @@ int result = SummOfTheNumbers(num);
 Console.WriteLine($"The sum of the components of the number {num} is {result}");
 }
 */
-
+/*
 int[] RandomArray(int size) // random array (1-9)
 {
         int[] array = new int[size];
@@ -105,3 +105,4 @@ Console.WriteLine("Add random array's size, please");
 int size = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enjoy your array:");
 PrintArray(RandomArray(size));
+*/
