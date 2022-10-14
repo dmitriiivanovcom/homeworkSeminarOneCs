@@ -1,4 +1,5 @@
-﻿// субъективно - зная про существование команды Math.Pov создать цикл было бы очень просто, 
+// ex uno
+// субъективно - зная про существование команды Math.Pov создать цикл было бы очень просто, 
 // но это было бы не так весело=)
 // моя версия дает правильные ответы даже если числа отрицательные 
 // код определенно избыточный, но обладает полным функционалом для int
@@ -36,6 +37,7 @@ if(b == 0) // if b = 0
 Console.WriteLine($"The number {a} in grade {b} is {c}.");
 */
 
+// ex dos
 
 /*
 int SummOfTheNumbers(int number)
@@ -87,6 +89,9 @@ int result = SummOfTheNumbers(num);
 Console.WriteLine($"The sum of the components of the number {num} is {result}");
 }
 */
+
+// ex tres
+
 /*
 int[] RandomArray(int size) // random array (1-9)
 {
