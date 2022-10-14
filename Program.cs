@@ -1,80 +1,107 @@
-﻿// exercise one
+﻿// субъективно - зная про существование команды Math.Pov создать цикл было бы очень просто, 
+// но это было бы не так весело=)
+// моя версия дает правильные ответы даже если точно считает 
+// код определенно избыточный, но обладает полным функционалом для int
 /*
-int RightSide(int num)
+Console.WriteLine("Add number integer.");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("To what grade does the number?(its too must be integer)");
+int b = Convert.ToInt32(Console.ReadLine());
+int i = 1;
+double c = a;
+if(b > 0) // if a & b is positive
 {
-    int x1 = num % 10 * 10;
-    int x2 = num % 100 / 10;
-    int x3 = x1 + x2;
-    return x3;
+    do
+    {
+        c = c * a;
+        i++;
+    }
+    while(i < b);
 }
-int LeftSide(int num)
+if(b < 0) // if a is positive, but b is negative
 {
-    int y = num / 1000;
-    return y;
+    int d;
+    d = Math.Abs(b);
+    do
+    {
+        c = c * a;
+        i++;
+    }
+    while(i < d);
+    c = 1 / c;
 }
-Console.WriteLine("Give me a five-digit number.");
+if(b == 0) // if b = 0
+    c = 1;
+
+Console.WriteLine($"The number {a} in grade {b} is {c}.");
+*/
+
+
+/*
+int SummOfTheNumbers(int number)
+{
+    int a = number; // any necessary variables
+    int b = 0;
+    int c = 10;
+    int d = 1;
+    int e = 0;
+    int f = 0;
+    do //arrays size
+    {
+        a = a / 10;
+        b++; // current of numbers
+    }
+    while(a > 0);
+    a = number;
+    int[] array = new int[b];// add new array
+        for(int i = 0; i < b; i++)// add remainder of the divide to array
+            {  
+            array[i] = a % c;
+            c = c * 10;
+            }
+    
+    do
+    {
+        array[e] = array[e] / d; // clean up redundant bits
+        d = d * 10;
+        e++;
+    }
+    while(e < b);
+    e = 0;
+    do // make what we want
+    {
+        f = f + array[e];
+        e++;
+    }
+    while(e < b);
+    return f;
+}
+
+Console.WriteLine("Give me integral positive number");
 int num = Convert.ToInt32(Console.ReadLine());
-int left = LeftSide(num);
-int right = RightSide(num);
-if(num < 100000 && num >= 10000)
-{
-    if(left == right) Console.WriteLine("Its Palindrome!");
-    if(left != right) Console.WriteLine("It isn't Palindrome!");
+if(num < 0)
+Console.WriteLine("Its negative!");
+if(num > 0)
+{ 
+int result = SummOfTheNumbers(num);
+Console.WriteLine($"The sum of the components of the number {num} is {result}");
 }
-else
-Console.WriteLine("Please, try again.");
 */
 
-
-// exercise two
-/*
-double Distance(double x1, double x2, double y1, double y2, double z1, double z2)
+int[] RandomArray(int size) // random array (1-9)
 {
-    double a = ((x2-x1)*(x2-x1));
-    double b = ((y2-y1)*(y2-y1));
-    double c = ((z2-z1)*(z2-z1));
-    double d = Math.Sqrt(a+b+c);
-    double result = Math.Round(d,3);
-    return result;
+        int[] array = new int[size];
+        for(int i = 0; i < size; i++)
+            array[i] = new Random().Next(1, 10);
+        return array;
 }
-
-Console.WriteLine("Hey, guy. wana know some distance? give me x1.");
-double x1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Now give me y1.");
-double y1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Last coordinate for first point. Give me z1.");
-double z1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Give me x2, guy.");
-double x2 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Give me y2");
-double y2 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Its the last one, give me z2");
-double z2 = Convert.ToDouble(Console.ReadLine());
-
-double dis = Distance(x1, x2, y1, y2, z1, z2);
-Console.WriteLine($"Your distance is {dis}, do not thank, guy!");
-*/
-
-//exercise three
-/*
-Console.WriteLine("How many cubes you want?");
-int num = Convert.ToInt32(Console.ReadLine());
-int temp = 1;
-int place = 0;
-int[] cubes = new int[num];
-do
+void PrintArray(int[] array) // Print array
 {
-    cubes[place] = temp*temp*temp;
-    temp++;
-    place++;
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
 }
-while(place < num);
-place = 0;
-Console.WriteLine("Your cubes: ");
-do
-{
-    Console.Write($" {cubes[place]}");
-    place++;
-}
-while(place < num);
-*/
+Console.WriteLine("Add random array's size, please");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enjoy your array:");
+PrintArray(RandomArray(size));
